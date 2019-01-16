@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 14, 2019 lúc 01:18 PM
+-- Thời gian đã tạo: Th1 16, 2019 lúc 02:44 AM
 -- Phiên bản máy phục vụ: 10.1.37-MariaDB
 -- Phiên bản PHP: 7.2.12
 
@@ -27,7 +27,8 @@ SET time_zone = "+00:00";
 --
 -- Cấu trúc bảng cho bảng `categories`
 --
-
+create database restaurant;
+use restaurant;
 CREATE TABLE `categories` (
   `id` int(11) NOT NULL,
   `cate_name` varchar(255) CHARACTER SET utf8 NOT NULL,
@@ -39,6 +40,11 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `cate_name`, `code`) VALUES
+(2, 'Món lẩu', 'ML'),
+(3, 'Món chiên-xào-hấp', 'MCXH'),
+(4, 'Món nướng', 'MN'),
+(5, 'Món nhậu', 'MNN'),
+(6, 'Món gà', 'MG'),
 (10, 'Món khai vị', 'KV');
 
 -- --------------------------------------------------------
@@ -61,7 +67,18 @@ CREATE TABLE `foods` (
 --
 
 INSERT INTO `foods` (`id`, `food_name`, `prices`, `description`, `category_id`, `status`) VALUES
-(8, 'Rau muống xào tỏi', 35000, 'Đây là món rau muống xào tỏi', 10, '1');
+(1, 'Gỏi bò cay', 59000, 'Đây là món khai vị', 10, '1'),
+(2, 'Ếch rang tiêu xanh', 59000, 'Đây là món ếch rang tiêu xanh', 10, '1'),
+(3, 'Khoai tây chiên', 29000, 'Đây là món khoai tây chiên', 10, '1'),
+(4, 'Bắp non xào hành', 29000, 'Đây là món bắp xào hành', 10, '1'),
+(5, 'Nghêu hấp', 39000, 'Đây là món nghêu hấp', 10, '1'),
+(6, 'Ba chỉ cuộn lá xanh', 39000, 'Đây là món ba chỉ cuốn lá xanh', 3, '2'),
+(7, 'Nghêu xào', 39000, 'Đây là món nghêu xào', 3, '2'),
+(8, 'Rau muống xào tỏi', 35000, 'Đây là món rau muống xào tỏi', 10, '1'),
+(9, 'Gỏi sứa', 39000, 'Đây là món gỏi sứa', 2, '1'),
+(10, 'Càng cua trộn hải sản', 49000, 'Đây là món càng cua trộn hải sản', 4, '1'),
+(11, 'Bạch tuộc nướng', 49000, 'Đây là món bạch tuộc nướng', 5, '3'),
+(12, 'Đậu bắp luộc', 19000, 'Đây là món đậu bắp luộc', 10, '1');
 
 -- --------------------------------------------------------
 
@@ -80,7 +97,17 @@ CREATE TABLE `image` (
 --
 
 INSERT INTO `image` (`id`, `food_id`, `link`) VALUES
-(5, 8, 'rau muong.jpg');
+(2, 1, 'goibocay.jpg'),
+(4, 2, 'echrangtieuxanh.jpg'),
+(5, 3, 'khoaitaychien.jpg'),
+(6, 4, 'bapnonxao.jpg'),
+(7, 6, 'bachicuonlaxanh.jpg'),
+(8, 5, 'ngheuhap.jpg'),
+(9, 7, 'ngheuxao.jpg'),
+(10, 8, 'daubapluoc.jpg'),
+(11, 9, 'goisua.jpg'),
+(12, 10, 'cangcuatronhaisan.jpg'),
+(13, 11, 'bachtuocnuong.jpg');
 
 -- --------------------------------------------------------
 
@@ -154,7 +181,9 @@ INSERT INTO `users` (`id`, `user_name`, `phone`, `email`, `password`, `role_id`)
 (15, 'Phạm Thị Thu Hà', 866487699, 'phamthithuha769999@gmail.com', '$2y$10$BOYL5Csnmga/7c46a4ffKOnoIoNQnvzb9mop/GcoqgtjpQwVpjwfG', 1),
 (16, 'tuan', 123456711, 'tuan@gmail.com', '$2y$10$JyGwn9IGuXvUkQsstN5ruO.l4yqRehtK1S84/2M3xGXlfYg86tly6', 1),
 (17, 'tao', 456872594, 'tao@gmail.com', '$2y$10$QXVxtsS4BEslUiZ80fl97uV5gaamS17bqq9yp3oHy0lB9iW2lvCwW', 1),
-(20, 'kiet', 123456711, 'kiet@gmail.com', '$2y$10$qLrF3ZD.V9MhvBLB1kokmeWw47cWgZNA6C.dg5VPet1Eb32bYxAdi', 1);
+(20, 'kiet', 123456711, 'kiet@gmail.com', '$2y$10$qLrF3ZD.V9MhvBLB1kokmeWw47cWgZNA6C.dg5VPet1Eb32bYxAdi', 1),
+(22, 'Ngoc Hung', 965243205, 'tranngochung1302@gmail.com', '$2y$10$DYJbIw/3I.r.ZFO0FpKtoOjHns0wKuSBUKupardz0z.0G0Omf.r5W', 1),
+(23, 'Tran Ngoc Hung Hung', 965243205, 'anhtran@gmail.com', '$2y$10$ytchy562.gvJwW7UUJgsqOrsTYRiZdjwICpAh7W4HdBajiv0pinWK', 1);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -227,13 +256,13 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT cho bảng `foods`
 --
 ALTER TABLE `foods`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT cho bảng `image`
 --
 ALTER TABLE `image`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT cho bảng `orders`
@@ -245,13 +274,13 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT cho bảng `role`
 --
 ALTER TABLE `role`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
