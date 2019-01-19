@@ -1021,7 +1021,7 @@
                                 </div>
                                 <p>Have questions, comments or just want to say hello:</p>
                                 <ul>
-                                    <li><a href="#"><i class="fa fa-envelope"></i>backpiper.com@gmail.com</a></li>
+                                    <li><a href="#"><i class="fa fa-envelope"></i>cungnguyen@gmail.com</a></li>
                                     <li><a href="#"><i class="fa fa-phone"></i>+88 01911 854 378</a></li>
                                     <li><a href="#"><i class="fa fa-map-marker"></i>5001 E. Colorado Blvd. Suite 820,<br /> Pasadena, CA 91106</a></li>
                                 </ul>
@@ -1064,7 +1064,7 @@
                 <div class="container">
                     <div class="pull-left">
                         <h5><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="index.php" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 </p></h5>
                     </div>
